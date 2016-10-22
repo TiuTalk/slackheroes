@@ -35,7 +35,7 @@ group :development do
 end
 
 group :test do
-  gem 'shoulda-matchers',     '3.0.1', require: false
+  gem 'shoulda-matchers',     '~> 3.1'
   gem 'simplecov',            '0.11.1', require: false
   gem 'vcr',                  '3.0.0'
   gem 'webmock',              '1.22.3'
