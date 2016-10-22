@@ -1,6 +1,11 @@
 class Deck
   attr_reader :type, :cards
 
+  EMOJI_LIST = {
+    likes: %w(+1),
+    love: %w(heart +1)
+  }
+
   def initialize(type)
     @type = type
     @cards = []
@@ -11,20 +16,43 @@ class Deck
   end
 
   def cards
-    return [] unless users.any?
-
-    rand(2..4).times do
-      user = users.sample
-      top_emoji = { emoji: %w(+1 -1 octocat cat).sample, count: rand(1..10) }
-      bottom_emoji = { emoji: %w(+1 -1 octocat cat).sample, count: rand(1..10) }
-
-      @cards << Card.new(user, [top_emoji, bottom_emoji])
-    end
-
-    @cards
+    deck = RankingDeck.new(EMOJI_LIST[type])
+    deck.users.map { |user| deck.card(user) }
   end
 
-  def users
-    @users ||= User.all
+  class RankingDeck
+    attr_reader :emoji_list
+
+    def initialize(emoji_list)
+      @emoji_list = emoji_list
+    end
+
+    def users(limit = 5)
+      @sent_counts = UserReaction.where(emoji: emoji_list).group(:user_sender_id).order('count_all DESC').limit(limit).count
+      @received_counts = UserReaction.where(emoji: emoji_list).group(:user_receiver_id).where(user_receiver_id: @sent_counts.keys).count
+
+      User.where(id: @sent_counts.keys).to_a.sort_by do |user|
+        -@sent_counts[user.id]
+      end
+    end
+
+    def card(user)
+      top_emoji = top_emoji(user)
+      bottom_emoji = bottom_emoji(user)
+
+      Card.new(user, [top_emoji, bottom_emoji])
+    end
+
+    private
+
+    def top_emoji(user)
+      count = @sent_counts[user.id].to_i
+      { emoji: emoji_list.sample, count: count }
+    end
+
+    def bottom_emoji(user)
+      count = -@received_counts[user.id].to_i
+      { emoji: emoji_list.sample, count: count }
+    end
   end
 end
