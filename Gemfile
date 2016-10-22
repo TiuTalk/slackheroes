@@ -25,6 +25,9 @@ gem 'normalize-rails',        '3.0.3'
 # Background jobs
 gem 'sidekiq',                '~> 4.2.3'
 
+# Slack API
+gem 'slack-ruby-client',      '~> 0.7.7'
+
 group :production, :staging do
   gem 'rack-canonical-host',  '0.2.2'
   gem 'newrelic_rpm',         '~> 3.12'
