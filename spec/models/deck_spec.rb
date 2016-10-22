@@ -3,7 +3,11 @@ require 'rails_helper'
 RSpec.describe Deck, type: :model do
   subject(:deck) { described_class.new(:likes) }
 
-  before { create_list(:user, 2) }
+  let!(:users) { create_list(:user, 3) }
+
+  before do
+    10.times { create(:user_reaction, sender: users.sample, receiver: users.sample, emoji: '+1') }
+  end
 
   describe '#title' do
     it 'return the deck title based on the kind' do

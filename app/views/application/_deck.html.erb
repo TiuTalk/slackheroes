@@ -22,7 +22,7 @@
         <div class="emoji bottom">
           <% emoji = Emoji.find_by_alias(card.bottom_emoji[:emoji]).image_filename %>
           <%= image_tag("/images/emoji/#{emoji}", size: '40x40', class: 'icon', title: card.bottom_emoji[:emoji]) %>
-          <span class="count">-<%= card.bottom_emoji[:count] %></span>
+          <span class="count"><%= card.bottom_emoji[:count] %></span>
         </div>
       </div>
       </div>
