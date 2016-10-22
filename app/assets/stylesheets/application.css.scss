@@ -3,15 +3,23 @@
 @import 'base/base';
 
 .hero {
-  background: #f2ebeb;
+  background: #323244;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   padding: 3em 0 2em;
+  color: #fff;
 
   .header {
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    h2 { color: #f33d6d; font-size: 2em; max-width: 450px; margin-top: .5em }
+    h3 { color: #f2ebeb; font-size: 1.6em; max-width: 600px; font-weight: normal }
   }
 }
 
@@ -25,7 +33,7 @@
   padding: 1em 0;
   text-align: center;
 
-  h3 { margin-bottom: 1em; font-size: 2em }
+  h3 { margin-bottom: 1em; font-size: 1.5em; color: #ffb533 }
 
   .cards {
     display: flex;
@@ -34,38 +42,82 @@
   }
 
   .card {
-    border: 1px solid #cecece;
-    border-radius: 3px;
-    padding-top: 1em;
     background: #fff;
-    min-width: 190px;
+    background: navy;
+    color: #000;
+    width: 220px;
+    height: 290px;
+    border-radius: 8px;
+    box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.25);
+    padding: 10px;
+    position: relative;
 
     h4, h5 { margin: 0 }
 
     .avatar {
-      max-width: 120px;
+      margin-top: 30px;
+      max-width: 140px;
       height: auto;
+      padding: 5px;
+      background: #fff;
     }
 
     .details {
-      padding: 1em .5em;
-      background: rgba(0, 0, 0, .1);
-      margin-top: -.7em;
+      margin-top: -24px;
+
+      .company {
+        background: #fff;
+        padding: .2em 1em;
+        color: #32353e;
+        text-transform: uppercase;
+        font-size: .7em;
+        display: inline-block;
+        position: relative;
+        margin-bottom: 10px;
+
+        &::before, &::after {
+          width: 20px;
+          background: #fff;
+          height: 1px;
+          display: block;
+          content: ' ';
+          position: absolute;
+          top: 50%;
+        }
+
+        &::before { left: -20px }
+        &::after { right: -20px }
+      }
+
+      .name, .title {
+        color: #f2ebeb;
+        font-size: 1.2em;
+        margin-bottom: .5em;
+      }
+
+      .title { font-weight: normal }
     }
   }
 
-  .badges {
+  .emoji {
+    position: absolute;
     display: flex;
-    flex-direction: row;
-    justify-content: space-around;
+    align-items: center;
 
-    .badge {
-      border-radius: 50%;
-      padding: 5px;
-      max-width: 30px;
+    &.top { top: 5px; left: 5px }
+    &.bottom { bottom: 5px; right: 5px; flex-direction: row-reverse; }
+
+    .icon {
+      width: 32px;
       height: auto;
-      background: #fff;
-      display: block;
+    }
+
+    .count {
+      color: #f2ebeb;
+      font-weight: bold;
+      margin: 0 .5em;
     }
   }
 }
+
+

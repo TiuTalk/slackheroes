@@ -6,16 +6,21 @@
       <div class="card">
         <%= image_tag('http://placehold.it/200x200', size: '200x200', class: 'avatar') %>
 
-        <ul class="badges">
-          <% rand(1..3).times do %>
-            <% emoji = Emoji.find_by_alias(%w(octocat +1 cat).sample).image_filename %>
-            <li><%= image_tag("/images/emoji/#{emoji}", size: '40x40', class: 'badge') %></li>
-          <% end %>
-        </ul>
-
         <div class="details">
-          <h4>John Doe</h4>
-          <h5>Developer</h5>
+          <h6 class="company">HE:labs</h6>
+          <h4 class="name">John Doe</h4>
+          <h5 class="title">Developer</h5>
+        </div>
+
+        <% top = Emoji.find_by_alias(%w(octocat +1 cat).sample).image_filename %>
+        <% bottom = Emoji.find_by_alias(%w(octocat +1 cat).sample).image_filename %>
+        <div class="emoji top">
+          <%= image_tag("/images/emoji/#{top}", size: '40x40', class: 'icon') %>
+          <span class="count">+10</span>
+        </div>
+        <div class="emoji bottom">
+          <%= image_tag("/images/emoji/#{bottom}", size: '40x40', class: 'icon') %>
+          <span class="count">+10</span>
         </div>
       </div>
     <% end %>
