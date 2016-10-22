@@ -7,5 +7,7 @@ RSpec.describe AuthorizationsController, type: :controller do
       get :authorize
       expect(response).to redirect_to(root_path)
     end
+
+    pending('missing auth tests')
   end
 end
