@@ -1,12 +1,8 @@
 require 'rails_helper'
 
-RSpec.describe Emoji, type: :model do
-  describe 'associations' do
-    it { is_expected.to have_many(:reactions).class_name(UserReaction).inverse_of(:emoji) }
-  end
-
+RSpec.describe CustomEmoji, type: :model do
   describe 'validations' do
-    subject { build(:emoji) }
+    subject { build(:custom_emoji) }
 
     it { is_expected.to validate_presence_of(:name) }
     it { is_expected.to validate_presence_of(:url) }

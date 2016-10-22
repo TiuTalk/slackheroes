@@ -1,8 +1,8 @@
-class EmojiImporterService
+class CustomEmojiImporterService
   def self.call
     emojis.each do |emoji|
       name, url = emoji
-      Emoji.find_or_create_by!(name: name, url: url)
+      CustomEmoji.find_or_create_by!(name: name, url: url)
     end
   end
 
