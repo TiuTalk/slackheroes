@@ -1,26 +1,27 @@
 <div class="deck">
-  <h3><%= title %></h3>
+  <h3><%= deck.title %></h3>
 
   <div class="cards">
-    <% rand(3..4).times do %>
+    <% deck.cards.each do |card| %>
       <div class="card">
-        <%= image_tag('http://placehold.it/200x200', size: '200x200', class: 'avatar') %>
+        <%= image_tag(card.user.avatar, alt: card.user.name, size: '200x200', class: 'avatar') %>
 
         <div class="details">
           <h6 class="company">HE:labs</h6>
-          <h4 class="name">John Doe</h4>
-          <h5 class="title">Developer</h5>
+          <h4 class="name"><%= card.user.name %></h4>
+          <h5 class="title"><%= card.user.title %></h5>
         </div>
 
-        <% top = Emoji.find_by_alias(%w(octocat +1 cat).sample).image_filename %>
-        <% bottom = Emoji.find_by_alias(%w(octocat +1 cat).sample).image_filename %>
         <div class="emoji top">
-          <%= image_tag("/images/emoji/#{top}", size: '40x40', class: 'icon') %>
-          <span class="count">+10</span>
+          <% emoji = Emoji.find_by_alias(card.top_emoji[:emoji]).image_filename %>
+          <%= image_tag("/images/emoji/#{emoji}", size: '40x40', class: 'icon', title: card.top_emoji[:emoji]) %>
+          <span class="count">+<%= card.top_emoji[:count] %></span>
         </div>
+
         <div class="emoji bottom">
-          <%= image_tag("/images/emoji/#{bottom}", size: '40x40', class: 'icon') %>
-          <span class="count">+10</span>
+          <% emoji = Emoji.find_by_alias(card.bottom_emoji[:emoji]).image_filename %>
+          <%= image_tag("/images/emoji/#{emoji}", size: '40x40', class: 'icon', title: card.bottom_emoji[:emoji]) %>
+          <span class="count">-<%= card.bottom_emoji[:count] %></span>
         </div>
       </div>
     <% end %>

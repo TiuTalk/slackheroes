@@ -16,11 +16,11 @@
       <h3>Find out your team’s ultimate heroes, what is your top power and what reaction is meant to match your messages.</h3>
     </header>
 
-    <%= render 'deck', title: 'The heroes' %>
+    <%= render 'deck', deck: Deck.new(:likes) %>
   </section>
 
   <main class="main">
-    <%= render 'deck', title: 'Clash of Slack heroes' %>
+    <%= render 'deck', deck: Deck.new(:likes) %>
   </main>
 
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
