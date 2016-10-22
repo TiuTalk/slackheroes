@@ -8,6 +8,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding: 3em 0 2em;
 
   .header {
     text-align: center;
@@ -23,6 +24,8 @@
   margin-top: 1em;
   padding: 1em 0;
   text-align: center;
+
+  h3 { margin-bottom: 1em; font-size: 2em }
 
   .cards {
     display: flex;
