@@ -33,7 +33,7 @@ http_interactions:
       Content-Security-Policy:
       - referrer no-referrer;
       Date:
-      - Sat, 22 Oct 2016 01:46:02 GMT
+      - Sat, 22 Oct 2016 03:07:36 GMT
       Expires:
       - Mon, 26 Jul 1997 05:00:00 GMT
       Pragma:
@@ -53,15 +53,15 @@ http_interactions:
       X-Slack-Backend:
       - h
       X-Slack-Req-Id:
-      - 36f684d8-43cf-4b85-b12f-3e66f97d086b
+      - 744e9e8b-92eb-4412-ad41-0540c9fcecdb
       X-Xss-Protection:
       - '0'
       X-Cache:
       - Miss from cloudfront
       Via:
-      - 1.1 ea06d8b38723f9a8283881c8bb2fd6fc.cloudfront.net (CloudFront)
+      - 1.1 2804e22600214b85d35113275791b33a.cloudfront.net (CloudFront)
       X-Amz-Cf-Id:
-      - KIVBxvc0dedaN7fSa7YUr8ffAk1WwdKPhrCkXqcZX8MSqL_4dTMbIg==
+      - _zQH8c5yvamIOAkFa8S7MIyVxfUPWGOfwQdLOzZq1BVV5JRWe2oD3Q==
     body:
       encoding: ASCII-8BIT
       string: '{"ok":true,"members":[{"id":"U2LNRJP1C","team_id":"T026M1A20","name":"abranches","deleted":false,"status":null,"color":"385a86","real_name":"Manoel
@@ -458,7 +458,7 @@ http_interactions:
         Jraige","real_name_normalized":"Wakim Jraige","email":"wakim@helabs.com.br"},"is_admin":false,"is_owner":false,"is_primary_owner":false,"is_restricted":false,"is_ultra_restricted":false,"is_bot":false},{"id":"U0BMFAM6E","team_id":"T026M1A20","name":"yogodoshi","deleted":true,"profile":{"first_name":"Cayo","last_name":"Medeiros","title":"Ruby
         Developer","skype":"helabs.yogodoshi","phone":"21 999853768","image_24":"https:\/\/avatars.slack-edge.com\/2015-10-01\/11725835910_d284085157284133e2c8_24.jpg","image_32":"https:\/\/avatars.slack-edge.com\/2015-10-01\/11725835910_d284085157284133e2c8_32.jpg","image_48":"https:\/\/avatars.slack-edge.com\/2015-10-01\/11725835910_d284085157284133e2c8_48.jpg","image_72":"https:\/\/avatars.slack-edge.com\/2015-10-01\/11725835910_d284085157284133e2c8_72.jpg","image_192":"https:\/\/avatars.slack-edge.com\/2015-10-01\/11725835910_d284085157284133e2c8_192.jpg","image_512":"https:\/\/avatars.slack-edge.com\/2015-10-01\/11725835910_d284085157284133e2c8_192.jpg","image_1024":"https:\/\/avatars.slack-edge.com\/2015-10-01\/11725835910_d284085157284133e2c8_192.jpg","image_original":"https:\/\/avatars.slack-edge.com\/2015-10-01\/11725835910_d284085157284133e2c8_original.jpg","avatar_hash":"d28408515728","real_name":"Cayo
         Medeiros","real_name_normalized":"Cayo Medeiros","email":"yogodoshi@helabs.com.br"},"is_bot":false},{"id":"USLACKBOT","team_id":"T026M1A20","name":"slackbot","deleted":false,"status":null,"color":"757575","real_name":"slackbot","tz":null,"tz_label":"Pacific
-        Daylight Time","tz_offset":-25200,"profile":{"first_name":"slackbot","last_name":"","image_24":"https:\/\/a.slack-edge.com\/0180\/img\/slackbot_24.png","image_32":"https:\/\/a.slack-edge.com\/2fac\/plugins\/slackbot\/assets\/service_32.png","image_48":"https:\/\/a.slack-edge.com\/2fac\/plugins\/slackbot\/assets\/service_48.png","image_72":"https:\/\/a.slack-edge.com\/0180\/img\/slackbot_72.png","image_192":"https:\/\/a.slack-edge.com\/66f9\/img\/slackbot_192.png","image_512":"https:\/\/a.slack-edge.com\/1801\/img\/slackbot_512.png","avatar_hash":"sv1444671949","real_name":"slackbot","real_name_normalized":"slackbot","fields":null},"is_admin":false,"is_owner":false,"is_primary_owner":false,"is_restricted":false,"is_ultra_restricted":false,"is_bot":false}],"cache_ts":1477100762}'
+        Daylight Time","tz_offset":-25200,"profile":{"first_name":"slackbot","last_name":"","image_24":"https:\/\/a.slack-edge.com\/0180\/img\/slackbot_24.png","image_32":"https:\/\/a.slack-edge.com\/2fac\/plugins\/slackbot\/assets\/service_32.png","image_48":"https:\/\/a.slack-edge.com\/2fac\/plugins\/slackbot\/assets\/service_48.png","image_72":"https:\/\/a.slack-edge.com\/0180\/img\/slackbot_72.png","image_192":"https:\/\/a.slack-edge.com\/66f9\/img\/slackbot_192.png","image_512":"https:\/\/a.slack-edge.com\/1801\/img\/slackbot_512.png","avatar_hash":"sv1444671949","real_name":"slackbot","real_name_normalized":"slackbot","fields":null},"is_admin":false,"is_owner":false,"is_primary_owner":false,"is_restricted":false,"is_ultra_restricted":false,"is_bot":false}],"cache_ts":1477105656}'
     http_version: 
-  recorded_at: Sat, 22 Oct 2016 01:46:02 GMT
+  recorded_at: Sat, 22 Oct 2016 03:10:00 GMT
 recorded_with: VCR 3.0.0
