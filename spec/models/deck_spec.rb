@@ -3,9 +3,11 @@ require 'rails_helper'
 RSpec.describe Deck, type: :model do
   subject(:deck) { described_class.new(:likes) }
 
+  before { create_list(:user, 2) }
+
   describe '#title' do
     it 'return the deck title based on the kind' do
-      expect(deck.title).to eq('Usuários que mais curtiram')
+      expect(deck.title).to eq('Users with more likes')
     end
   end
 
