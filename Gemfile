@@ -10,6 +10,7 @@ gem 'pg',                     '0.18.4'
 gem 'sass-rails',             '5.0.5'
 gem 'uglifier',               '2.7.2'
 gem 'rollbar',                '2.11.3'
+gem 'omniauth-slack',         '2.3.0'
 
 # Helpers
 gem 'simple_form',            '3.2.1'
