@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title><%= page_title(app_name: 'SlackHeroes') %></title>
+
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body class="<%= body_class %>">
+  <section class="hero">
+    <header class="header">
+      <%= link_to(image_tag('http://placehold.it/300x50', class: 'logo'), root_path) %>
+      <h1>SlackHeroes</h1>
+      <h2>Something something</h2>
+    </header>
+
+    <%= render 'deck', title: 'The heroes' %>
+  </section>
+
+  <main class="main">
+    <%= render 'deck', title: 'Clash of Slack heroes' %>
+  </main>
+
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+</body>
+</html>

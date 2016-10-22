@@ -29,6 +29,9 @@ gem 'sidekiq',                '~> 4.2.3'
 # Slack API
 gem 'slack-ruby-client',      '~> 0.7.7'
 
+# Gemoji
+gem 'gemoji',                  '~> 3.0.0.rc1'
+
 group :production, :staging do
   gem 'rack-canonical-host',  '0.2.2'
   gem 'newrelic_rpm',         '~> 3.12'

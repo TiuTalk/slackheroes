@@ -1,19 +1,71 @@
 @import 'normalize-rails';
 @import 'bourbon';
 @import 'base/base';
-@import 'neat';
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
- * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *
- *= require_self
- */
+
+.hero {
+  background: #f2ebeb;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 3em 0 2em;
+
+  .header {
+    text-align: center;
+  }
+}
+
+.avatar {
+  border-radius: 50%
+}
+
+.deck {
+  width: 100%;
+  margin-top: 1em;
+  padding: 1em 0;
+  text-align: center;
+
+  h3 { margin-bottom: 1em; font-size: 2em }
+
+  .cards {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
+  .card {
+    border: 1px solid #cecece;
+    border-radius: 3px;
+    padding-top: 1em;
+    background: #fff;
+    min-width: 190px;
+
+    h4, h5 { margin: 0 }
+
+    .avatar {
+      max-width: 120px;
+      height: auto;
+    }
+
+    .details {
+      padding: 1em .5em;
+      background: rgba(0, 0, 0, .1);
+      margin-top: -.7em;
+    }
+  }
+
+  .badges {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+
+    .badge {
+      border-radius: 50%;
+      padding: 5px;
+      max-width: 30px;
+      height: auto;
+      background: #fff;
+      display: block;
+    }
+  }
+}

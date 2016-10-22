@@ -10,12 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161022011011) do
+ActiveRecord::Schema.define(version: 20161022133815) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "emojis", force: :cascade do |t|
+  create_table "custom_emojis", force: :cascade do |t|
     t.string   "name",       null: false
     t.string   "url",        null: false
     t.datetime "created_at", null: false
@@ -45,6 +45,6 @@ ActiveRecord::Schema.define(version: 20161022011011) do
     t.datetime "updated_at", null: false
   end
 
-  add_foreign_key "user_reactions", "emojis"
+  add_foreign_key "user_reactions", "custom_emojis", column: "emoji_id"
   add_foreign_key "user_reactions", "users"
 end
