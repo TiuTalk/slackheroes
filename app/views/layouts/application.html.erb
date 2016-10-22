@@ -3,6 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <title><%= page_title(app_name: 'SlackHeroes') %></title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
@@ -11,16 +12,16 @@
   <section class="hero">
     <header class="header">
       <%= link_to(image_tag('http://placehold.it/300x50', class: 'logo'), root_path) %>
-      <h1>SlackHeroes</h1>
-      <h2>Something something</h2>
+      <h2>Your Slack team into a guild of reaction heroes</h2>
+      <h3>Find out your team’s ultimate heroes, what is your top power and what reaction is meant to match your messages.</h3>
       <div><%= link_to 'login', '/auth/slack' %></div>
     </header>
 
-    <%= render 'deck', title: 'The heroes' %>
+    <%= render 'deck', deck: Deck.new(:likes) %>
   </section>
 
   <main class="main">
-    <%= render 'deck', title: 'Clash of Slack heroes' %>
+    <%= render 'deck', deck: Deck.new(:likes) %>
   </main>
 
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>

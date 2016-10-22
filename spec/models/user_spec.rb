@@ -3,7 +3,18 @@ require 'rails_helper'
 RSpec.describe User, type: :model do
   describe 'associations' do
     xit { is_expected.to belong_to(:team) }
-    it { is_expected.to have_many(:reactions).class_name(UserReaction).inverse_of(:user) }
+    it do
+      is_expected.to \
+        have_many(:reactions_sent).
+        class_name(UserReaction).
+        inverse_of(:sender)
+    end
+    it do
+      is_expected.to \
+        have_many(:reactions_received).
+        class_name(UserReaction).
+        inverse_of(:receiver)
+    end
   end
 
   describe 'validations' do

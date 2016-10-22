@@ -1,7 +1,8 @@
 FactoryGirl.define do
   factory :user_reaction do
-    user
+    association :sender, factory: :user
+    association :receiver, factory: :user
     message_uid { SecureRandom.hex(5) }
-    action 'sent'
+    emoji ":smile:"
   end
 end
