@@ -10,6 +10,7 @@ class AuthorizationsController < ApplicationController
       team.token = request.env['omniauth.auth']['credentials']['token']
       team.save
     end
+    flash[:notice] = 'Your team is authorized successfully. We are importing your team data, please check back in a few minutes'
     redirect_to root_path
   end
 end
