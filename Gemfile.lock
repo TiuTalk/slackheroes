@@ -68,6 +68,7 @@ GEM
       execjs
     coffee-script-source (1.10.0)
     concurrent-ruby (1.0.2)
+    connection_pool (2.2.0)
     crack (0.4.3)
       safe_yaml (~> 1.0.0)
     database_cleaner (1.5.1)
@@ -131,6 +132,8 @@ GEM
     rack-canonical-host (0.2.2)
       addressable (> 0, < 3)
       rack (>= 1.0.0, < 3)
+    rack-protection (1.5.3)
+      rack
     rack-test (0.6.3)
       rack (>= 1.0)
     rails (5.0.0)
@@ -160,6 +163,7 @@ GEM
     rb-fsevent (0.9.7)
     rb-inotify (0.9.7)
       ffi (>= 0.5.0)
+    redis (3.3.1)
     refills (0.1.0)
     rollbar (2.11.3)
       multi_json
@@ -193,6 +197,11 @@ GEM
       user_agent_parser
     shoulda-matchers (3.1.1)
       activesupport (>= 4.0.0)
+    sidekiq (4.2.3)
+      concurrent-ruby (~> 1.0)
+      connection_pool (~> 2.2, >= 2.2.0)
+      rack-protection (>= 1.5.0)
+      redis (~> 3.2, >= 3.2.1)
     simple_form (3.2.1)
       actionpack (> 4, < 5.1)
       activemodel (> 4, < 5.1)
@@ -264,6 +273,7 @@ DEPENDENCIES
   sass-rails (= 5.0.5)
   secure_headers (= 2.4.4)
   shoulda-matchers (~> 3.1)
+  sidekiq (~> 4.2.3)
   simple_form (= 3.2.1)
   simplecov (= 0.11.1)
   spring (= 1.5.0)

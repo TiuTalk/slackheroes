@@ -22,6 +22,9 @@ gem 'bitters',                '1.1.0'
 gem 'refills',                '0.1.0'
 gem 'normalize-rails',        '3.0.3'
 
+# Background jobs
+gem 'sidekiq',                '~> 4.2.3'
+
 group :production, :staging do
   gem 'rack-canonical-host',  '0.2.2'
   gem 'newrelic_rpm',         '~> 3.12'
