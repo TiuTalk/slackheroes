@@ -21,6 +21,8 @@
     h2 { color: #f33d6d; font-size: 2em; max-width: 450px; margin-top: .5em }
     h3 { color: #f2ebeb; font-size: 1.6em; max-width: 600px; font-weight: normal }
   }
+
+  .deck { padding-bottom: 0; margin-bottom: -3.5em }
 }
 
 .avatar {
@@ -44,7 +46,6 @@
 
   .card {
     background: #fff;
-    background: navy;
     color: #000;
     width: 220px;
     height: 290px;
@@ -55,6 +56,12 @@
     margin: 0 1em 1em;
 
     h4, h5 { margin: 0 }
+
+    .content {
+      background: #323244;
+      height: 100%;
+      border-radius: 6px;
+    }
 
     .avatar {
       margin-top: 30px;

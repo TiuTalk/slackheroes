@@ -4,6 +4,7 @@
   <div class="cards">
     <% deck.cards.each do |card| %>
       <div class="card">
+        <div class="content">
         <%= image_tag(card.user.avatar, alt: card.user.name, size: '200x200', class: 'avatar') %>
 
         <div class="details">
@@ -23,6 +24,7 @@
           <%= image_tag("/images/emoji/#{emoji}", size: '40x40', class: 'icon', title: card.bottom_emoji[:emoji]) %>
           <span class="count">-<%= card.bottom_emoji[:count] %></span>
         </div>
+      </div>
       </div>
     <% end %>
   </div>
