@@ -1,5 +1,5 @@
 FactoryGirl.define do
-  factory :slack_user do
+  factory :user do
     uid { SecureRandom.hex(5) }
     name "John Doe"
     username "john"

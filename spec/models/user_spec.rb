@@ -1,9 +1,9 @@
 require 'rails_helper'
 
-RSpec.describe SlackUser, type: :model do
+RSpec.describe User, type: :model do
   describe 'associations' do
     xit { is_expected.to belong_to(:team) }
-    xit { is_expected.to have_many(:reactions).class_name(UserReaction) }
+    it { is_expected.to have_many(:reactions).class_name(UserReaction) }
   end
 
   describe 'validations' do

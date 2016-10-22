@@ -1,4 +1,4 @@
-class SlackUser < ApplicationRecord
+class User < ApplicationRecord
   # Associations
   # has_many :reactions, class_name: UserReaction
 
