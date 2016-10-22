@@ -22,6 +22,27 @@ ActiveRecord::Schema.define(version: 20161022172621) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "slack_users", force: :cascade do |t|
+    t.string   "uid"
+    t.string   "name"
+    t.string   "username"
+    t.string   "title"
+    t.string   "avatar"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "teams", force: :cascade do |t|
+    t.string   "slack_id"
+    t.string   "name"
+    t.string   "domain"
+    t.string   "email_domain"
+    t.string   "image"
+    t.string   "token"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
   create_table "user_reactions", force: :cascade do |t|
     t.integer  "user_sender_id"
     t.string   "emoji",            limit: 80, null: false
