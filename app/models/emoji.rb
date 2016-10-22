@@ -1,4 +1,5 @@
 class Emoji < ApplicationRecord
-  validates :name, uniqueness: true
+  # Validations
   validates :name, :url, presence: true
+  validates :name, uniqueness: true
 end
