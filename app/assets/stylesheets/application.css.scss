@@ -31,11 +31,23 @@
   }
 
   .card {
-    border: 1px solid black;
+    border: 1px solid #cecece;
     border-radius: 3px;
-    padding: .5em;
+    padding-top: 1em;
     background: #fff;
-    min-width: 150px;
+    min-width: 190px;
+
+    h4, h5 { margin: 0 }
+
+    .avatar {
+      max-width: 120px;
+    }
+
+    .details {
+      padding: 1em .5em;
+      background: rgba(0, 0, 0, .1);
+      margin-top: -.7em;
+    }
   }
 
   .badges {
@@ -44,9 +56,11 @@
     justify-content: space-around;
 
     .badge {
-      border: 1px solid #ccc;
       border-radius: 50%;
-      padding: .2em;
+      padding: 3px;
+      max-width: 40px;
+      background: #fff;
+      display: block;
     }
   }
 }
