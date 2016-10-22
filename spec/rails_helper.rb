@@ -3,7 +3,6 @@ require 'spec_helper'
 require File.expand_path('../../config/environment', __FILE__)
 require 'rspec/rails'
 require 'shoulda/matchers'
-require 'email_spec'
 
 Dir[Rails.root.join('spec/support/**/*.rb')].each { |f| require f }
 
@@ -14,7 +13,5 @@ RSpec.configure do |config|
   config.infer_spec_type_from_file_location!
   config.render_views
   config.include FactoryGirl::Syntax::Methods
-  config.include EmailSpec::Helpers
-  config.include EmailSpec::Matchers
   config.include ActiveSupport::Testing::TimeHelpers
 end
