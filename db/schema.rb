@@ -28,7 +28,7 @@ ActiveRecord::Schema.define(version: 20161022172621) do
     t.string   "message_uid"
     t.datetime "created_at",                  null: false
     t.datetime "updated_at",                  null: false
-    t.integer  "user_receiver_id"
+    t.integer  "user_receiver_id",            null: false
     t.index ["emoji"], name: "index_user_reactions_on_emoji", using: :btree
     t.index ["message_uid"], name: "index_user_reactions_on_message_uid", using: :btree
     t.index ["user_receiver_id"], name: "index_user_reactions_on_user_receiver_id", using: :btree
