@@ -66,7 +66,7 @@
     .avatar {
       margin-top: 30px;
       max-width: 140px;
-      height: auto;
+      max-height: 140px;
       padding: 5px;
       background: #fff;
     }
@@ -118,7 +118,7 @@
 
     .icon {
       width: 32px;
-      height: auto;
+      height: 32px;
     }
 
     .count {
