@@ -1,17 +1,17 @@
 en:
   deck:
     title:
-      likes: Users with more likes
-      love: Users who loves the world
+      likes: The SuperThumbsUp Team
+      love: The SpreadTheLove Team
       team: All the Heroes of %{team}
       champions: The Champions of <b>%{team}</b>
-      kisser: They are HOT
-      religious: Most faithful users
-      smile: Happiest people EVER
-      money: Money spenders
-      cry: Sensitive sweet hearts
-      erotic: They are sexy!
-      parrot: Parrot kings and queens
+      kisser: The HotLips
+      religious: The Spirituals
+      smile: The BeHappy Team
+      money: The Benjamin$
+      cry: The SuperTeardrops
+      erotic: The TooSexyForMyLove Team
+      parrot: The Fiesta Team
     subtitle:
       champions: The TOP of the TOPs
   card:
