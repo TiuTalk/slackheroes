@@ -13,7 +13,7 @@ class Deck
   end
 
   def title
-    I18n.t(type, scope: :deck)
+    I18n.t(type, scope: :deck, team: @team.name)
   end
 
   def cards
