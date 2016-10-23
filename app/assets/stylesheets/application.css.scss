@@ -214,6 +214,13 @@
       .count { display: none }
       .title, .company { display: none }
 
+      .card-description {
+        margin-top: 1.5em;
+        font-size: .9em;
+        color: #f2ebeb;
+        padding: 0 .9em;
+      }
+
       .content::before {
         content: ' ';
         display: block;
@@ -236,9 +243,9 @@
         &::before { background: image-url('image-ohmighty.png') no-repeat; width: 184px; height: 216px; left: 30px }
       }
 
-      &.the_oh_mighty .content {
-        background: #323244;
-        &::before { background: image-url('image-ohmighty.png') no-repeat; width: 184px; height: 216px; left: 30px }
+      &.drunk .content {
+        background: #81CFE0;
+        &::before { background: image-url('image-beer.png') no-repeat; width: 189px; height: 207px; left: 5px }
       }
     }
   }

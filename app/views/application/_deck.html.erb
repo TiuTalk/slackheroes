@@ -38,6 +38,8 @@
         </div>
         <% end %>
       </div>
+
+      <%= content_tag(:p, card.description, class: 'card-description') if card.description.present? %>
       </div>
     <% end %>
   </div>
