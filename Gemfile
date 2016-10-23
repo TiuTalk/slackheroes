@@ -45,11 +45,12 @@ group :development do
 end
 
 group :test do
-  gem 'shoulda-matchers',     '~> 3.1'
-  gem 'simplecov',            '0.11.1', require: false
-  gem 'vcr',                  '3.0.0'
-  gem 'webmock',              '1.22.3'
-  gem 'database_cleaner',     '1.5.1'
+  gem 'shoulda-matchers',         '~> 3.1'
+  gem 'simplecov',                '0.11.1', require: false
+  gem 'vcr',                      '3.0.0'
+  gem 'webmock',                  '1.22.3'
+  gem 'database_cleaner',         '1.5.1'
+  gem 'rails-controller-testing', '1.0.1'
 end
 
 group :development, :test do
