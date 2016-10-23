@@ -17,7 +17,7 @@
         <% if card.top_emoji[:emoji].present? %>
         <div class="emoji top">
           <div class="reaction">
-            <%= image_tag(emoji_url(card.bottom_emoji[:emoji], deck.team), size: '40x40', class: 'icon', title: card.top_emoji[:emoji]) %>
+            <%= image_tag(emoji_url(card.top_emoji[:emoji], deck.team), size: '40x40', class: 'icon', title: card.top_emoji[:emoji]) %>
           </div>
           <span class="count"><%= t(:sent_count_html, count: card.top_emoji[:count]) %></span>
         </div>
