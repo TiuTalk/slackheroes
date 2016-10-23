@@ -18,10 +18,12 @@
       <h3>Find out your team’s ultimate heroes, what is your top power and what reaction is meant to match your messages.</h3>
       <div><%= link_to 'login', '/auth/slack' %></div>
     </header>
+
+    <%= content_for :header %>
   </section>
 
   <main class="main">
-    <%= render 'deck', deck: RankingDeck.new(:love) %>
+    <%= yield %>
   </main>
 
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
