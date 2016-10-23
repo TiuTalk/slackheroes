@@ -17,6 +17,6 @@ class Deck
   end
 
   def cards
-    users.map { |user| card(user) }
+    @cards ||= users.map { |user| card(user) }
   end
 end
