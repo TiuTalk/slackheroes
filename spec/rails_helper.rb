@@ -13,4 +13,5 @@ RSpec.configure do |config|
   config.render_views
   config.include FactoryGirl::Syntax::Methods
   config.include ActiveSupport::Testing::TimeHelpers
+  config.include ActiveJob::TestHelper
 end

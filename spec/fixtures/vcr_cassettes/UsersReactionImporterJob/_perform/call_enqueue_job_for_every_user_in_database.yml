@@ -1,0 +1,60 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://slack.com/api/reactions.list
+    body:
+      encoding: UTF-8
+      string: count=50&page=1&token=<SLACK_API_TOKEN>&user=U026SEPC5
+    headers:
+      Accept:
+      - application/json; charset=utf-8
+      User-Agent:
+      - Slack Ruby Client/0.7.7
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '55'
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Origin:
+      - "*"
+      Content-Security-Policy:
+      - referrer no-referrer;
+      Date:
+      - Sat, 22 Oct 2016 21:20:43 GMT
+      Server:
+      - Apache
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Vary:
+      - Accept-Encoding
+      X-Content-Type-Options:
+      - nosniff
+      X-Slack-Backend:
+      - h
+      X-Slack-Req-Id:
+      - c6c8a18f-5a84-4b6f-a872-704a9f524da6
+      X-Xss-Protection:
+      - '0'
+      X-Cache:
+      - Miss from cloudfront
+      Via:
+      - 1.1 4a2c68e38b445be45864e74cb554f7eb.cloudfront.net (CloudFront)
+      X-Amz-Cf-Id:
+      - 1kJvYstgbXd1FIBkh3t6i3yPfpXQNfsMeOvAov3LtXwI1Bx09l8fcw==
+    body:
+      encoding: ASCII-8BIT
+      string: '{"ok":false,"error":"invalid_auth"}'
+    http_version: 
+  recorded_at: Sat, 22 Oct 2016 21:23:08 GMT
+recorded_with: VCR 3.0.0
