@@ -15,14 +15,18 @@
         </div>
 
         <div class="emoji top">
-          <% emoji = Emoji.find_by_alias(card.top_emoji[:emoji]).image_filename %>
-          <%= image_tag("/images/emoji/#{emoji}", size: '40x40', class: 'icon', title: card.top_emoji[:emoji]) %>
+          <div class="reaction">
+            <% emoji = Emoji.find_by_alias(card.top_emoji[:emoji]).image_filename %>
+            <%= image_tag("/images/emoji/#{emoji}", size: '40x40', class: 'icon', title: card.top_emoji[:emoji]) %>
+          </div>
           <span class="count"><%= t(:sent_count_html, count: card.top_emoji[:count]) %></span>
         </div>
 
         <div class="emoji bottom">
-          <% emoji = Emoji.find_by_alias(card.bottom_emoji[:emoji]).image_filename %>
-          <%= image_tag("/images/emoji/#{emoji}", size: '40x40', class: 'icon', title: card.bottom_emoji[:emoji]) %>
+          <div class="reaction">
+            <% emoji = Emoji.find_by_alias(card.bottom_emoji[:emoji]).image_filename %>
+            <%= image_tag("/images/emoji/#{emoji}", size: '40x40', class: 'icon', title: card.bottom_emoji[:emoji]) %>
+          </div>
           <span class="count"><%= t(:received_count_html, count: card.bottom_emoji[:count]) %></span>
         </div>
       </div>
