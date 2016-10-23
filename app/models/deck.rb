@@ -13,7 +13,13 @@ class Deck
   end
 
   def title
-    I18n.t(type, scope: :deck, team: @team.name)
+    I18n.t(type, scope: [:deck, :title], team: @team.name)
+  end
+
+  def subtitle
+    I18n.t(type, scope: [:deck, :subtitle], team: @team.name, raise: true)
+  rescue I18n::MissingTranslationData
+    nil
   end
 
   def cards

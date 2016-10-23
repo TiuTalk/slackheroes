@@ -12,7 +12,7 @@ class RankingDeck < Deck
     top_emoji = top_emoji(user)
     bottom_emoji = bottom_emoji(user)
 
-    Card.new(user, [top_emoji, bottom_emoji])
+    Card.new(user, top_emoji: top_emoji, bottom_emoji: bottom_emoji)
   end
 
   private

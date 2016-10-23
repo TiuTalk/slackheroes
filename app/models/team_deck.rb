@@ -4,14 +4,14 @@ class TeamDeck < Deck
   end
 
   def users
-    @team.users.joins(:reactions_sent).order(name: :asc).distinct
+    team.users.joins(:reactions_sent).order(name: :asc).distinct
   end
 
   def card(user)
     top_emoji = top_emoji(user)
     bottom_emoji = bottom_emoji(user)
 
-    Card.new(user, [top_emoji, bottom_emoji])
+    Card.new(user, top_emoji: top_emoji, bottom_emoji: bottom_emoji)
   end
 
   private

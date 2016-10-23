@@ -7,7 +7,7 @@ class UserReaction < ApplicationRecord
   # Validations
   validates :receiver, :emoji, :sender, :message_uid, presence: true
 
-  def self.top
-    group(:emoji).order('count_id DESC').limit(1).count(:id)
+  def self.top(column = :emoji)
+    group(column).order('count_id DESC').limit(1).count(:id)
   end
 end

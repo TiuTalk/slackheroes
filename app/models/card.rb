@@ -1,8 +1,9 @@
-class Card
-  attr_reader :user, :top_emoji, :bottom_emoji
+class Card < OpenStruct
+  def initialize(user, options = {})
+    super(options.merge(user: user))
+  end
 
-  def initialize(user, emojis)
-    @user = user
-    @top_emoji, @bottom_emoji = emojis
+  def title
+    I18n.t(klass, scope: :card) if klass.present?
   end
 end
