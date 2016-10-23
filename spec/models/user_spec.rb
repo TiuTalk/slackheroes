@@ -2,7 +2,6 @@ require 'rails_helper'
 
 RSpec.describe User, type: :model do
   describe 'associations' do
-    xit { is_expected.to belong_to(:team) }
     it do
       is_expected.to \
         have_many(:reactions_sent).
