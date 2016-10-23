@@ -1,20 +1,26 @@
 <% if deck.cards.any? %>
 <div class="deck <%= deck.type %>">
+  <h4 class="subtitle"><%= deck.subtitle %></h3>
   <h3><%= deck.title %></h3>
 
   <div class="cards">
     <% deck.cards.each do |card| %>
-      <div class="card">
+      <div class="card <%= card.klass %>">
         <div class="content">
         <%= image_tag(card.user.avatar, alt: card.user.name, size: '200x200', class: 'avatar') %>
 
         <div class="details">
-          <h6 class="company"><%= card.user.team.name %></h6>
-          <h4 class="name"><%= card.user.name %></h4>
-          <h5 class="title"><%= card.user.title %></h5>
+          <%= content_tag(:h6, card.title, class: 'card-title') if card.title.present? %>
+          <%= content_tag(:h5, card.user.team.name, class: 'company') %>
+          <%= content_tag(:h4, card.user.name, class: 'name') %>
+          <%= content_tag(:h5, card.user.title, class: 'title') %>
         </div>
 
-        <% if card.top_emoji[:emoji].present? %>
+        <% if card.count && card.count > 0 %>
+          <span class="count"><%= card.count %></span>
+        <% end %>
+
+        <% if card.top_emoji && card.top_emoji[:emoji].present? %>
         <div class="emoji top">
           <div class="reaction">
             <%= image_tag(emoji_url(card.top_emoji[:emoji], deck.team), size: '40x40', class: 'icon', title: card.top_emoji[:emoji]) %>
@@ -23,7 +29,7 @@
         </div>
         <% end %>
 
-        <% if card.bottom_emoji[:emoji].present? %>
+        <% if card.bottom_emoji && card.bottom_emoji[:emoji].present? %>
         <div class="emoji bottom">
           <div class="reaction">
             <%= image_tag(emoji_url(card.bottom_emoji[:emoji], deck.team), size: '40x40', class: 'icon', title: card.bottom_emoji[:emoji]) %>

@@ -56,7 +56,7 @@
   padding: 1em 0;
   text-align: center;
 
-  h3 { margin-bottom: 1em; font-size: 1.5em; color: #f33d6d }
+  h3 { margin-bottom: 1em; font-size: 2em; color: #f33d6d }
 
   .cards {
     display: flex;
@@ -89,8 +89,7 @@
       margin-top: 50px;
       max-width: 120px;
       max-height: 120px;
-      padding: 5px;
-      background: #fff;
+      border: 5px solid #fff;
     }
 
     .details {
@@ -162,9 +161,85 @@
       width: 120px;
       height: 190px;
 
-      .avatar { max-width: 60px; max-height: 60px; padding: 3px; margin-top: 40px }
+      .avatar { max-width: 60px; max-height: 60px; border-size: 3px; margin-top: 40px }
       .details { margin-top: 0px }
       .company, .title, .count small { display: none }
+    }
+  }
+
+  &.champions {
+    .subtitle {
+      color: #81cfe0;
+      font-size: .9em;
+      text-transform: uppercase;
+      font-weight: 600;
+      margin-bottom: 0
+    }
+
+    .card {
+      .content {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: center;
+        position: relative;
+      }
+
+      .avatar {
+        width: 60px;
+        height: 60px;
+        z-index: 10;
+        margin: 0 0 -8px;
+      }
+
+      .details {
+        background: #f2ebeb;
+        align-self: stretch;
+        min-height: 82px;
+      }
+
+      .card-title {
+        margin: 30px 0 0;
+        font-weight: 600;
+        font-size: 1.2em;
+        color: #323244;
+      }
+
+      .name {
+        font-weight: 300;
+        font-size: .9em;
+        color: #4a4a4a;
+      }
+
+      .count { display: none }
+      .title, .company { display: none }
+
+      .content::before {
+        content: ' ';
+        display: block;
+        bottom: 82px;
+        position: absolute;
+      }
+
+      &.super_crush .content {
+        background: #f33d6d;
+        &::before { background: image-url('image-supercrush.png') no-repeat; width: 166px; height: 177px; left: 10px }
+      }
+
+      &.the_oh_mighty .content {
+        background: #323244;
+        &::before { background: image-url('image-ohmighty.png') no-repeat; width: 184px; height: 216px; left: 30px }
+      }
+
+      &.sweet_heart .content {
+        background: #6de38c;
+        &::before { background: image-url('image-ohmighty.png') no-repeat; width: 184px; height: 216px; left: 30px }
+      }
+
+      &.the_oh_mighty .content {
+        background: #323244;
+        &::before { background: image-url('image-ohmighty.png') no-repeat; width: 184px; height: 216px; left: 30px }
+      }
     }
   }
 }
