@@ -2,7 +2,7 @@ en:
   deck:
     title:
       likes: The SuperThumbsUp Squad
-      love: The SpreadTheLove Team
+      love: The Love Guardians
       team: All the Heroes of %{team}
       champions: The Champions of <b>%{team}</b>
       kisser: The HotLips
@@ -10,16 +10,16 @@ en:
       smile: The BeHappy League
       money: The Benjamin$
       cry: The SuperTeardrops
-      erotic: The TooSexyForMyLove Clan
+      erotic: The TooSexyForMyLove Troopers
       parrot: The Fiesta Legends
     subtitle:
       champions: The TOP of the TOPs
   card:
     title:
-      super_crush: SuperCrush
-      the_oh_mighty: TheOhMighty
-      joker: LaughOutLoud
-      drunk: TheViking
+      super_crush: The SuperCrush
+      the_oh_mighty: The OhMighty
+      joker: The LaughOutLoud
+      drunk: The Viking
     description:
       super_crush: The one who got <b>more heart</b> reactions <3
       the_oh_mighty: The one who <b>reacted the most</b> to friends messages.
