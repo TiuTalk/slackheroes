@@ -15,6 +15,8 @@ class UserImporterService
         u.save!
       end
     end
+
+    UsersReactionImporterJob.perform_later
   end
 
   private

@@ -18,5 +18,10 @@ RSpec.describe UserImporterService, type: :service do
         subject.call
       end.not_to change(User, :count).from(54)
     end
+
+    it 'enqueue job to process user reactions from user' do
+      expect(UsersReactionImporterJob).to receive(:perform_later).exactly(1).times
+      subject.call
+    end
   end
 end
