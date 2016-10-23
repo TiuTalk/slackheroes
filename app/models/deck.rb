@@ -20,16 +20,24 @@ class Deck
   end
 
   def title
-    I18n.t(type, scope: [:deck, :title], team: @team.name).html_safe
+    I18n.t(type, scope: [:deck, :title], team: @team.try(:name) || 'SlackHeroes').html_safe
   end
 
   def subtitle
-    I18n.t(type, scope: [:deck, :subtitle], team: @team.name, raise: true).html_safe
+    I18n.t(type, scope: [:deck, :subtitle], team: @team.try(:name), raise: true).html_safe
   rescue I18n::MissingTranslationData
     nil
   end
 
   def cards
     @cards ||= users.map { |user| card(user) }
+  end
+
+  def team_users
+    @team.present? ? @team.users : User.includes(:team)
+  end
+
+  def team_reactions
+    @team.present? ? @team.user_reactions : UserReaction
   end
 end

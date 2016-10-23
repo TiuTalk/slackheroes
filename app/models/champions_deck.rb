@@ -15,7 +15,7 @@ class ChampionsDeck < Deck
       user_id, count = find_champion(*rules.first)
 
       if user_id.present?
-        user = team.users.find(user_id)
+        user = team_users.find(user_id)
         Card.new(user, count: count, klass: type)
       end
     end.compact.shuffle
@@ -27,9 +27,9 @@ class ChampionsDeck < Deck
     column = (rule == :received) ? :user_receiver_id : :user_sender_id
 
     if emoji == :all
-      champion = team.user_reactions.top(column)
+      champion = team_reactions.top(column)
     else
-      champion = team.user_reactions.where(emoji: emoji).top(column)
+      champion = team_reactions.where(emoji: emoji).top(column)
     end
 
     champion.first.to_a

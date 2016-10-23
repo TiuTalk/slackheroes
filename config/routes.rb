@@ -5,5 +5,7 @@ Rails.application.routes.draw do
   get '/authorize', to: 'authorizations#authorize'
   mount Sidekiq::Web, at: '/sidekiq'
 
-  resources :teams, path: '', only: [:show]
+  resources :teams, path: '', only: [:show] do
+    get :random, on: :collection
+  end
 end

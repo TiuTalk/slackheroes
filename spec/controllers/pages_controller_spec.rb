@@ -2,20 +2,11 @@ require 'rails_helper'
 
 RSpec.describe PagesController, type: :controller do
   describe "GET #home" do
-    context 'without a team' do
-      it "returns http success" do
-        get :home
-        expect(response).to have_http_status(:success)
-      end
-    end
+    let!(:team) { create(:team) }
 
-    context 'with a team' do
-      let!(:team) { create(:team) }
-
-      it 'redirect to the team page' do
-        get :home
-        expect(response).to redirect_to(team)
-      end
+    it 'render the page' do
+      get :home
+      expect(response).to be_ok
     end
   end
 end

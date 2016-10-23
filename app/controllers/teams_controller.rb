@@ -12,4 +12,10 @@ class TeamsController < ApplicationController
       render 'loading'
     end
   end
+
+  def random
+    @team = Team.joins(:users).order('RANDOM()').first
+
+    redirect_to @team
+  end
 end
