@@ -6,6 +6,8 @@ class AuthorizationsController < ApplicationController
     else
       team = build_team
       if team.save
+        UsersImporterJob.perform_later(team)
+        CustomEmojiImporterJob.perform_later(team)
         flash[:notice] = 'Your team is authorized successfully. We are importing your team data. Check back this page in a few minutes.'
       end
     end

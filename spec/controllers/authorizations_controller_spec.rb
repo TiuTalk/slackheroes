@@ -39,6 +39,16 @@ RSpec.describe AuthorizationsController, type: :controller do
           expect(response).to redirect_to(team_path(Team.last))
         end
 
+        it 'fire job to import users from team' do
+          expect(UsersImporterJob).to receive(:perform_later).with(kind_of(Team))
+          get :authorize
+        end
+
+        it 'fire job to import emojis from team' do
+          expect(CustomEmojiImporterJob).to receive(:perform_later).with(kind_of(Team))
+          get :authorize
+        end
+
         it 'returns flash message' do
           get :authorize
           expect(flash[:notice]).to eq 'Your team is authorized successfully. We are importing your team data. Check back this page in a few minutes.'
