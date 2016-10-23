@@ -3,7 +3,7 @@ en:
     title:
       likes: The SuperThumbsUp Squad
       love: The Love Guardians
-      team: All the Heroes of %{team}
+      team: All the Heroes of <b>%{team}</b>
       champions: The Champions of <b>%{team}</b>
       kisser: The HotLips
       religious: The Spirituals

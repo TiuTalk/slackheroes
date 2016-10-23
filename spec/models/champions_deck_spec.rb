@@ -5,8 +5,8 @@ RSpec.describe ChampionsDeck, type: :model do
   let!(:users) { create_list(:user, 3, team: team) }
 
   before do
-    10.times do
-      emoji = %w(+1 heart beer).sample
+    20.times do
+      emoji = %w(+1 heart beer joy).sample
       create(:user_reaction, team: team, sender: users.sample, receiver: users.sample, emoji: emoji)
     end
   end
@@ -15,7 +15,7 @@ RSpec.describe ChampionsDeck, type: :model do
 
   describe '#title' do
     it 'return the deck title based on the kind' do
-      expect(deck.title).to eq("The Champions")
+      expect(deck.title).to eq("The Champions of <b>#{team.name}</b>")
     end
   end
 

@@ -12,7 +12,7 @@ RSpec.describe TeamDeck, type: :model do
 
   describe '#title' do
     it 'return the deck title based on the kind' do
-      expect(deck.title).to eq("All the heroes of #{team.name}")
+      expect(deck.title).to eq("All the Heroes of <b>#{team.name}</b>")
     end
   end
 
