@@ -11,16 +11,24 @@
 </head>
 
 <body class="<%= body_class %>">
-  <section class="hero">
-    <header class="header">
-      <h1><%= link_to('SlackHeroes', root_path) %></h1>
+  <header class="header">
+    <div class="row">
+      <h1><%= link_to(image_tag('logo.png', alt: 'SlackHeroes'), root_path) %></h1>
+
+      <div class="navigation">
+        <%= link_to('See a random team', root_path) %>
+        or
+        <%= link_to('Check your team', '/auth/slack', class: 'button') %>
+      </div>
+    </div>
+
+    <section class="hero">
       <h2>Your Slack team into a guild of reaction heroes</h2>
       <h3>Find out your team’s ultimate champions, what is your top power and what reaction is meant to match your messages.</h3>
-      <div><%= link_to 'Add your Slack Team', '/auth/slack' %></div>
-    </header>
+    </section>
 
     <%= content_for :header %>
-  </section>
+  </header>
 
   <main class="main">
     <%= yield %>

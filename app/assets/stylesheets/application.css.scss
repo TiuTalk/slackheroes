@@ -8,35 +8,51 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.hero {
+.header {
   background: #323244;
+  color: #f2ebeb;
+
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 3em 0 2em;
-  color: #f2ebeb;
+  padding-bottom: 2em;
 
-  .header {
-    text-align: center;
+  .row {
+    align-self: stretch;
+    padding: 20px;
+
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
 
-    h1 {
-      margin-bottom: 0;
-      font-size: 1.1em;
+    color: #f2ebeb;
 
-      a { color: inherit }
+    a { margin: 0 .5em; color: inherit }
+
+    .button {
+      color: #f33d6d;
+      text-transform: uppercase;
+      border-radius: 6px;
+      border: solid 2px #f33d6d;
+      padding: .5em 1em;
     }
-    h2 { color: #f33d6d; font-size: 2em; max-width: 450px; margin-top: .1em; margin-bottom: .2em }
-    h3 { font-size: 1.6em; max-width: 600px; font-weight: 300 }
   }
+
+  h2 { color: #f33d6d; font-size: 2em; max-width: 450px; margin-top: .1em; margin-bottom: .2em }
+  h3 { font-size: 1.6em; max-width: 600px; font-weight: 300 }
 
   .deck {
-    h3 { color: inherit }
+    h3 { color: inherit; max-width: 100% }
   }
+}
+
+.hero {
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .main {
