@@ -23,16 +23,6 @@ ActiveRecord::Schema.define(version: 20161023123353) do
     t.integer  "team_id"
   end
 
-  create_table "slack_users", force: :cascade do |t|
-    t.string   "uid"
-    t.string   "name"
-    t.string   "username"
-    t.string   "title"
-    t.string   "avatar"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "teams", force: :cascade do |t|
     t.string   "slack_id"
     t.string   "name"
@@ -50,7 +40,7 @@ ActiveRecord::Schema.define(version: 20161023123353) do
     t.string   "message_uid"
     t.datetime "created_at",                  null: false
     t.datetime "updated_at",                  null: false
-    t.integer  "user_receiver_id",            null: false
+    t.integer  "user_receiver_id"
     t.integer  "team_id"
     t.index ["emoji"], name: "index_user_reactions_on_emoji", using: :btree
     t.index ["message_uid"], name: "index_user_reactions_on_message_uid", using: :btree
