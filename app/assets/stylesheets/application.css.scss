@@ -15,7 +15,7 @@
   justify-content: center;
   align-items: center;
   padding: 3em 0 2em;
-  color: #fff;
+  color: #f2ebeb;
 
   .header {
     text-align: center;
@@ -24,11 +24,14 @@
     justify-content: center;
     align-items: center;
 
-    h2 { color: #f33d6d; font-size: 2em; max-width: 450px; margin-top: .5em }
-    h3 { color: #f2ebeb; font-size: 1.6em; max-width: 600px; font-weight: normal }
+    h1 { margin-bottom: 0; font-size: 1.1em }
+    h2 { color: #f33d6d; font-size: 2em; max-width: 450px; margin-top: .1em; margin-bottom: .2em }
+    h3 { font-size: 1.6em; max-width: 600px; font-weight: 300 }
   }
 
-  .deck { padding-bottom: 0; margin-bottom: -3.5em }
+  .deck {
+    h3 { color: inherit }
+  }
 }
 
 .avatar {
@@ -41,7 +44,7 @@
   padding: 1em 0;
   text-align: center;
 
-  h3 { margin-bottom: 1em; font-size: 1.5em; color: #ffb533 }
+  h3 { margin-bottom: 1em; font-size: 1.5em; color: #f33d6d }
 
   .cards {
     display: flex;
@@ -108,9 +111,15 @@
         color: #f2ebeb;
         font-size: 1.2em;
         margin-bottom: .5em;
+        padding: 0 .5em;
       }
 
-      .title { font-weight: normal }
+      .title {
+        font-weight: normal;
+        max-height: 2.4em;
+        overflow: hidden;
+        font-size: 1em;
+      }
     }
   }
 
@@ -128,6 +137,7 @@
     }
 
     .count {
+      vertical-align: middle;
       color: #f2ebeb;
       font-weight: bold;
       margin: 0 .5em;

@@ -1,0 +1,7 @@
+en:
+  sent_count_html:
+    one: "%{count} <small>sent</small>"
+    other: "%{count} <small>sent</small>"
+  received_count_html:
+    one: "<small>received</small> %{count}"
+    other: "<small>received</small> %{count}"

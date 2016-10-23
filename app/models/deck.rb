@@ -27,7 +27,7 @@ class Deck
       @emoji_list = emoji_list
     end
 
-    def users(limit = 5)
+    def users(limit = 8)
       @sent_counts = UserReaction.where(emoji: emoji_list).group(:user_sender_id).order('count_all DESC').limit(limit).count
       @received_counts = UserReaction.where(emoji: emoji_list).group(:user_receiver_id).where(user_receiver_id: @sent_counts.keys).count
 
@@ -51,7 +51,7 @@ class Deck
     end
 
     def bottom_emoji(user)
-      count = -@received_counts[user.id].to_i
+      count = @received_counts[user.id].to_i
       { emoji: emoji_list.sample, count: count }
     end
   end
