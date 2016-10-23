@@ -4,7 +4,7 @@ class TeamDeck < Deck
   end
 
   def users
-    @team.users.order(name: :asc)
+    @team.users.joins(:reactions_sent).order(name: :asc).distinct
   end
 
   def card(user)
