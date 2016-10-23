@@ -184,6 +184,9 @@
   }
 
   &.champions {
+    .logo { max-width: 150px; height: auto; border-radius: 50%; background: #fff; margin-bottom: 1em
+      }
+
     .subtitle {
       color: #81cfe0;
       font-size: .9em;
