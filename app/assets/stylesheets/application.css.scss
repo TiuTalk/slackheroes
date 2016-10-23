@@ -232,11 +232,10 @@
 
       .count {
         top: 2px;
-        left: 2px;
+        left: 7px;
         position: absolute;
         font-weight: bold;
         color: #fff;
-        width: 1.7em;
       }
       .title, .company { display: none }
 
@@ -271,7 +270,7 @@
 
       &.drunk .content {
         background: #81CFE0;
-        &::before { background: image-url('image-beer.png') no-repeat; width: 189px; height: 207px; left: 5px }
+        &::before { background: image-url('image-beer-alt.png') no-repeat; width: 187px; height: 190px; left: 20px }
       }
     }
   }

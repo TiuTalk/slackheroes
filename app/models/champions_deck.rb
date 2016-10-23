@@ -1,9 +1,9 @@
 class ChampionsDeck < Deck
   CARDS = {
-    super_crush: { received: :heart },
+    super_crush: { received: %w(heart hearts heart_eyes heartpulse heart_decoration heart_eyes_cat) },
     the_oh_mighty: { sent: :all },
     sweet_heart: { sent: :heart },
-    drunk: { sent: :beer }
+    drunk: { received: %w(beer beers wine_glass sake cocktail champagne) }
   }.freeze
 
   def initialize(options = {})
