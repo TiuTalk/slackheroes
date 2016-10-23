@@ -2,4 +2,6 @@
   <%= render 'deck', deck: ChampionsDeck.new(team: nil) %>
 <% end %>
 
-<%= render 'deck', deck: RankingDeck.new(:likes, team: nil) %>
+<% RankingDeck::EMOJI_LIST.keys.shuffle.first(3).map do |emoji| %>
+  <%= render 'deck', deck: RankingDeck.new(emoji, team: nil) %>
+<% end %>
