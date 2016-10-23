@@ -37,8 +37,8 @@ RSpec.describe AuthorizationsController, type: :controller do
         end
 
         it 'returns flash message' do
-          get :authrorize
-          expect(flash[:message]).to eq 'Your team is authorized successfully. We are importing your team data. Check back this page in a few minutes.'
+          get :authorize
+          expect(flash[:notice]).to eq 'Your team is authorized successfully. We are importing your team data. Check back this page in a few minutes.'
         end
       end
 
@@ -55,8 +55,8 @@ RSpec.describe AuthorizationsController, type: :controller do
         end
 
         it 'returns flash message' do
-          get :authrorize
-          expect(flash[:message]).to eq 'Your team was already authorized.'
+          get :authorize
+          expect(flash[:notice]).to eq 'Your team was already authorized.'
         end
       end
     end
