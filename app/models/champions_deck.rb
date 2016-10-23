@@ -2,7 +2,7 @@ class ChampionsDeck < Deck
   CARDS = {
     super_crush: { received: %w(heart hearts heart_eyes heartpulse heart_decoration heart_eyes_cat) },
     the_oh_mighty: { sent: :all },
-    sweet_heart: { sent: :heart },
+    joker: { received: %w(joy joy_cat laughing smile smiley smile_cat slightly_smiling_face upside_down_face stuck_out_tongue_closed_eyes) },
     drunk: { received: %w(beer beers wine_glass sake cocktail champagne) }
   }.freeze
 
