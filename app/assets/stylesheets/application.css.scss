@@ -145,7 +145,7 @@
 
     .icon {
       width: 32px;
-      height: 32px;
+      height: auto;
     }
 
     .count {
@@ -211,7 +211,14 @@
         color: #4a4a4a;
       }
 
-      .count { display: none }
+      .count {
+        top: 2px;
+        left: 2px;
+        position: absolute;
+        font-weight: bold;
+        color: #fff;
+        width: 1.7em;
+      }
       .title, .company { display: none }
 
       .card-description {
