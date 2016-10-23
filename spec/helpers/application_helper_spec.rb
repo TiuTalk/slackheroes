@@ -19,8 +19,8 @@ RSpec.describe ApplicationHelper do
       expect(helper.emoji_url('lol', team)).to be_eql("http://google.com/image/lol")
     end
 
-    it 'returns nil when does not exists' do
-      expect(helper.emoji_url('aaa', team)).to be_nil
+    it 'returns the emoji name when does not exists' do
+      expect(helper.emoji_url('aaa', team)).to be_eql('aaa')
     end
   end
 end
