@@ -12,7 +12,7 @@ RSpec.describe RankingDeck, type: :model do
 
   describe '#title' do
     it 'return the deck title based on the kind' do
-      expect(deck.title).to eq('Users with more likes')
+      expect(deck.title).to eq('The SuperThumbsUp Squad')
     end
   end
 
