@@ -5,6 +5,8 @@
   <title><%= page_title(app_name: 'SlackHeroes') %></title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
+  <%= content_for :meta %>
+
   <%= stylesheet_link_tag 'https://fonts.googleapis.com/css?family=Lato:300,400,700' %>
   <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>

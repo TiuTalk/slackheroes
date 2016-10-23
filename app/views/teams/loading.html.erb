@@ -1,0 +1,14 @@
+<% content_for :meta do %>
+  <meta http-equiv="refresh" content="30" />
+<% end %>
+
+<div class="loading">
+  <%= image_tag('loading.gif', size: 32) %>
+
+  <p>We are looking for your team heroes &amp; reactions in the history books...</p>
+  <p>Please wait until we find <b>at least 100 reactions</b> to show, eh?</p>
+  <p>This page will refresh automatically, go get your cup of <code>:coffee:</code> and let us do our job!</p>
+  <small>If your team have less than 100 reactions, go make some history, and try again.</p>
+
+  <%= image_tag(emoji_url('v')) %>
+</div>
