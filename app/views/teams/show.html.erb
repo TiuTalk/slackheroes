@@ -8,4 +8,10 @@
 
 <%= render 'deck', deck: RankingDeck.new(:religious, team: @team) %>
 
+<%= render 'deck', deck: RankingDeck.new(:smile, team: @team) %>
+
+<%= render 'deck', deck: RankingDeck.new(:money, team: @team) %>
+
+<%= render 'deck', deck: RankingDeck.new(:cry, team: @team) %>
+
 <%= render 'deck', deck: TeamDeck.new(team: @team) %>
