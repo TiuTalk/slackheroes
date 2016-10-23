@@ -19,7 +19,7 @@ RSpec.describe TeamsController, type: :controller do
 
     context 'with invalid team domain' do
       it "raise error" do
-        expect{ get :show, params: { domain: 'foobar' } }.to raise_error
+        expect{ get :show, params: { domain: 'foobar' } }.to raise_error(ActiveRecord::RecordNotFound)
       end
     end
   end
