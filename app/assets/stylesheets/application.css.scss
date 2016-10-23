@@ -135,9 +135,9 @@
     .reaction {
       background: white;
       border-radius: 50%;
-      height: 56px;
+      height: 50px;
       text-align: center;
-      width: 56px;
+      width: 50px;
 
       img {
         margin-top: 10px;
@@ -154,6 +154,17 @@
       color: #f2ebeb;
       font-weight: bold;
       margin: 0 .5em;
+    }
+  }
+
+  &.team {
+    .card {
+      width: 120px;
+      height: 190px;
+
+      .avatar { max-width: 60px; max-height: 60px; padding: 3px; margin-top: 40px }
+      .details { margin-top: 0px }
+      .company, .title, .count small { display: none }
     }
   }
 }

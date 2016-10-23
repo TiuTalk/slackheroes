@@ -1,5 +1,5 @@
 <% if deck.cards.any? %>
-<div class="deck">
+<div class="deck <%= deck.type %>">
   <h3><%= deck.title %></h3>
 
   <div class="cards">
@@ -14,6 +14,7 @@
           <h5 class="title"><%= card.user.title %></h5>
         </div>
 
+        <% if card.top_emoji[:emoji].present? %>
         <div class="emoji top">
           <div class="reaction">
             <% emoji = Emoji.find_by_alias(card.top_emoji[:emoji]).image_filename %>
@@ -21,7 +22,9 @@
           </div>
           <span class="count"><%= t(:sent_count_html, count: card.top_emoji[:count]) %></span>
         </div>
+        <% end %>
 
+        <% if card.bottom_emoji[:emoji].present? %>
         <div class="emoji bottom">
           <div class="reaction">
             <% emoji = Emoji.find_by_alias(card.bottom_emoji[:emoji]).image_filename %>
@@ -29,6 +32,7 @@
           </div>
           <span class="count"><%= t(:received_count_html, count: card.bottom_emoji[:count]) %></span>
         </div>
+        <% end %>
       </div>
       </div>
     <% end %>
