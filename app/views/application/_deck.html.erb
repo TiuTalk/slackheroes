@@ -1,7 +1,5 @@
 <% if deck.cards.any? %>
 <div class="deck <%= deck.type %>">
-  <%= image_tag(@team.image, class: 'logo') if deck.type == :champions && @team.image.present? %>
-
   <h4 class="subtitle"><%= deck.subtitle %></h3>
   <h3><%= deck.title %></h3>
 

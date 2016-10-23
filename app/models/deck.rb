@@ -13,11 +13,11 @@ class Deck
   end
 
   def title
-    I18n.t(type, scope: [:deck, :title], team: @team.name)
+    I18n.t(type, scope: [:deck, :title], team: @team.name).html_safe
   end
 
   def subtitle
-    I18n.t(type, scope: [:deck, :subtitle], team: @team.name, raise: true)
+    I18n.t(type, scope: [:deck, :subtitle], team: @team.name, raise: true).html_safe
   rescue I18n::MissingTranslationData
     nil
   end

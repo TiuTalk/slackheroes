@@ -4,7 +4,7 @@ en:
       likes: Users with more likes
       love: Users who loves the world
       team: All the Heroes of %{team}
-      champions: The Champions of %{team}
+      champions: The Champions of <b>%{team}</b>
     subtitle:
       champions: The TOP of the TOPs
   card:
