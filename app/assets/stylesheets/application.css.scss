@@ -34,12 +34,19 @@
   }
 }
 
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center
+}
+
 .avatar {
   border-radius: 50%
 }
 
 .deck {
-  width: 100%;
+  max-width: 1200px;
   margin-top: 1em;
   padding: 1em 0;
   text-align: center;
