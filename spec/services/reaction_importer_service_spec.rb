@@ -2,7 +2,8 @@ require 'rails_helper'
 
 RSpec.describe ReactionImporterService, type: :service do
   describe '#call' do
-    let(:user) { create(:user, uid: 'U0EK98GN5') }
+    let(:team) { create :team }
+    let(:user) { create(:user, uid: 'U0EK98GN5', team: team) }
     let(:active_users)  do
       [
         create(:user, uid: 'U026SEPC5'),
@@ -30,6 +31,7 @@ RSpec.describe ReactionImporterService, type: :service do
       create(:user_reaction,
              receiver: user,
              sender: sender,
+             team: user.team,
              emoji: 'smile',
              message_uid: '12345'
             )

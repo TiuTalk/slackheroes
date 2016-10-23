@@ -1,7 +1,7 @@
 class UsersImporterJob < ApplicationJob
   queue_as :default
 
-  def perform(*args)
-    UserImporterService.call
+  def perform(team)
+    UserImporterService.new(team).call
   end
 end

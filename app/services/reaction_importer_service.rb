@@ -3,6 +3,7 @@ class ReactionImporterService
     UserReaction.find_or_create_by!(
       receiver: receiver,
       sender: sender,
+      team: receiver.team,
       emoji: extract_emoji(emoji),
       message_uid: message_uid(message_uid)
     )

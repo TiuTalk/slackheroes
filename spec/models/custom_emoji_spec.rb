@@ -8,4 +8,8 @@ RSpec.describe CustomEmoji, type: :model do
     it { is_expected.to validate_presence_of(:url) }
     it { is_expected.to validate_uniqueness_of(:name) }
   end
+
+  describe 'associations' do
+    it { is_expected.to belong_to(:team) }
+  end
 end

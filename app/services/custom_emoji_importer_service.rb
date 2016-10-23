@@ -1,15 +1,20 @@
 class CustomEmojiImporterService
-  def self.call
+  attr_reader :team
+
+  def initialize(team)
+    @team = team
+  end
+
+  def call
     emojis.each do |emoji|
       name, url = emoji
-      CustomEmoji.find_or_create_by!(name: name, url: url)
+      team.custom_emojis.find_or_create_by!(name: name, url: url)
     end
   end
 
-  def self.emojis
-    client = Slack::Web::Client.new
+  private
+  def emojis
+    client = Slack::Web::Client.new(token: team.token)
     client.emoji_list.emoji
   end
-
-  private_class_method :emojis
 end

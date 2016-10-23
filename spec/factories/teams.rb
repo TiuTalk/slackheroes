@@ -1,7 +1,7 @@
 FactoryGirl.define do
   factory :team do
-    slack_id "T026M1A20"
-    name "HE:labs"
-    domain "helabs"
+    sequence(:slack_id) { |n| "T026M1A#{n}" }
+    sequence(:name) { |n| "HE:labs#{n}" }
+    sequence(:domain) { |n| "helabs#{n}" }
   end
 end

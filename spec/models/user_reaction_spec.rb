@@ -16,6 +16,7 @@ RSpec.describe UserReaction, type: :model do
         class_name(User).
         with_foreign_key(:user_receiver_id)
     end
+    it { is_expected.to belong_to(:team) }
   end
 
   describe 'validations' do

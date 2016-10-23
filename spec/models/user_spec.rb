@@ -14,6 +14,7 @@ RSpec.describe User, type: :model do
         class_name(UserReaction).
         inverse_of(:receiver)
     end
+    it { is_expected.to belong_to(:team) }
   end
 
   describe 'validations' do

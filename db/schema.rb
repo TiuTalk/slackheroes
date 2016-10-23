@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161022172621) do
+ActiveRecord::Schema.define(version: 20161023123353) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 20161022172621) do
     t.string   "url",        null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "team_id"
   end
 
   create_table "slack_users", force: :cascade do |t|
@@ -50,6 +51,7 @@ ActiveRecord::Schema.define(version: 20161022172621) do
     t.datetime "created_at",                  null: false
     t.datetime "updated_at",                  null: false
     t.integer  "user_receiver_id",            null: false
+    t.integer  "team_id"
     t.index ["emoji"], name: "index_user_reactions_on_emoji", using: :btree
     t.index ["message_uid"], name: "index_user_reactions_on_message_uid", using: :btree
     t.index ["user_receiver_id"], name: "index_user_reactions_on_user_receiver_id", using: :btree
@@ -64,6 +66,7 @@ ActiveRecord::Schema.define(version: 20161022172621) do
     t.string   "avatar"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "team_id"
   end
 
   add_foreign_key "user_reactions", "users", column: "user_receiver_id"

@@ -4,5 +4,6 @@ FactoryGirl.define do
     association :receiver, factory: :user
     message_uid { SecureRandom.hex(5) }
     emoji ":smile:"
+    team
   end
 end
