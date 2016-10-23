@@ -8,7 +8,9 @@ class Deck
     religious: %w(pray),
     smile: %w(grinning grimacing grin smiley smile laughing slightly_smiling_face),
     money: %w(money_mouth_face moneybag money_with_wings dollar yen euro pound),
-    cry: %w(cry sob crying_cat_face)
+    cry: %w(cry sob crying_cat_face),
+    erotic: %w(mr_bean_erotic pump_it_up_girl pump_it_up_girl_left awww_yisss),
+    parrot: %w(dealwithitparrot explodyparrot fastparrot fiesta_parrot middleparrot oldtimeyparrot sadparrot shuffleparrot partyparrot slowparrot)
   }.freeze
 
   def initialize(type, options = {})
