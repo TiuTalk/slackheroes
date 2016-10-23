@@ -3,8 +3,8 @@ en:
     title:
       likes: Users with more likes
       love: Users who loves the world
-      team: All the heroes of %{team}
-      champions: The Champions
+      team: All the Heroes of %{team}
+      champions: The Champions of %{team}
     subtitle:
       champions: The TOP of the TOPs
   card:
