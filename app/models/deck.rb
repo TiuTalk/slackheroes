@@ -3,7 +3,7 @@ class Deck
 
   EMOJI_LIST = {
     likes: %w(+1),
-    love: %w(heart +1)
+    love: %w(heart)
   }
 
   def initialize(type)
