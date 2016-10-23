@@ -8,7 +8,7 @@ class UserImporterService
   def call
     active_users.each do |user|
       team.users.where(uid: user.id).first_or_initialize do |u|
-        u.name = user.real_name
+        u.name = get_name(user)
         u.username = user.name
         u.title = user.profile.title
         u.avatar = user.profile.image_192
@@ -27,5 +27,13 @@ class UserImporterService
 
   def ignore_user?(user)
     user.is_restricted || user.deleted || user.is_bot || user.name == 'slackbot'
+  end
+
+  def get_name(user)
+    if user.real_name.blank?
+      user.name
+    else
+      user.real_name
+    end
   end
 end
