@@ -5,6 +5,8 @@ en:
       love: Users who loves the world
       team: All the Heroes of %{team}
       champions: The Champions of <b>%{team}</b>
+      kisser: Greatest kissers
+      religious: Most faithful users
     subtitle:
       champions: The TOP of the TOPs
   card:

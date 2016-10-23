@@ -3,7 +3,9 @@ class Deck
 
   EMOJI_LIST = {
     likes: %w(+1),
-    love: %w(heart)
+    love: %w(heart),
+    kisser: %w(kissing_heart kissing kissing_smiling_eyes kissing_closed_eyes kissing_cat),
+    religious: %w(pray)
   }.freeze
 
   def initialize(type, options = {})

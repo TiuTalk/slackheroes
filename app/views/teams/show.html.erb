@@ -4,4 +4,8 @@
 
 <%= render 'deck', deck: RankingDeck.new(:love, team: @team) %>
 
+<%= render 'deck', deck: RankingDeck.new(:kisser, team: @team) %>
+
+<%= render 'deck', deck: RankingDeck.new(:religious, team: @team) %>
+
 <%= render 'deck', deck: TeamDeck.new(team: @team) %>

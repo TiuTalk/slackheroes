@@ -1,5 +1,5 @@
 class RankingDeck < Deck
-  def users(limit = 8)
+  def users(limit = 4)
     @sent_counts = users_with_reactions.group(:user_sender_id).order('count_all DESC').limit(limit).count
     @received_counts = users_with_reactions.group(:user_receiver_id).where(user_receiver_id: @sent_counts.keys).count
 
