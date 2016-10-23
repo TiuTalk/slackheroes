@@ -28,7 +28,7 @@ class ReactionsImporterService
   end
 
   def self.reactions_from(user, page)
-    client = Slack::Web::Client.new
+    client = Slack::Web::Client.new(token: user.team.token)
     client.reactions_list(count: 500, user: user.uid, page: page)
   end
 end
