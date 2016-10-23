@@ -8,6 +8,28 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+body {
+  padding-bottom: 2em
+}
+
+.ribbon {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  box-sizing: border-box;
+  background: #81cfe0;
+  color: #333;
+  padding: 1em 1em;
+  text-align: center;
+  z-index: 100;
+  vertical-align: middle;
+
+  display: flex;
+  justify-content: space-between;
+
+  a { cursor: pointer }
+}
+
 .header {
   background: #323244;
   color: #f2ebeb;
@@ -191,7 +213,7 @@
 
   &.champions {
     .logo { max-width: 150px; height: auto; border-radius: 50%; background: #fff; margin-bottom: 1em
-      }
+    }
 
     .subtitle {
       color: #81cfe0;
