@@ -1,13 +1,14 @@
 require 'rails_helper'
 
 RSpec.describe RankingDeck, type: :model do
-  subject(:deck) { described_class.new(:likes) }
-
-  let!(:users) { create_list(:user, 3) }
+  let(:team) { create(:team) }
+  let!(:users) { create_list(:user, 3, team: team) }
 
   before do
-    10.times { create(:user_reaction, sender: users.sample, receiver: users.sample, emoji: '+1') }
+    10.times { create(:user_reaction, team: team, sender: users.sample, receiver: users.sample, emoji: '+1') }
   end
+
+  subject(:deck) { described_class.new(:likes, team: team) }
 
   describe '#title' do
     it 'return the deck title based on the kind' do

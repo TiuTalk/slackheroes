@@ -1,9 +1,9 @@
 class RankingDeck < Deck
   def users(limit = 8)
-    @sent_counts = UserReaction.where(emoji: @emojis).group(:user_sender_id).order('count_all DESC').limit(limit).count
-    @received_counts = UserReaction.where(emoji: @emojis).group(:user_receiver_id).where(user_receiver_id: @sent_counts.keys).count
+    @sent_counts = users_with_reactions.group(:user_sender_id).order('count_all DESC').limit(limit).count
+    @received_counts = users_with_reactions.group(:user_receiver_id).where(user_receiver_id: @sent_counts.keys).count
 
-    User.where(id: @sent_counts.keys).to_a.sort_by do |user|
+    team.users.where(id: @sent_counts.keys).to_a.sort_by do |user|
       -@sent_counts[user.id]
     end
   end
@@ -16,6 +16,10 @@ class RankingDeck < Deck
   end
 
   private
+
+  def users_with_reactions
+    team.user_reactions.where(emoji: @emojis)
+  end
 
   def top_emoji(user)
     emoji_count(@sent_counts[user.id].to_i)
