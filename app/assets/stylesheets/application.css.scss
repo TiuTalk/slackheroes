@@ -43,8 +43,12 @@
   h3 { font-size: 1.6em; max-width: 600px; font-weight: 300 }
 
   .deck {
-    h3 { color: inherit; max-width: 100% }
-    b { color: #f33d6d; font-weight: inherit }
+    h3 {
+      color: inherit;
+      max-width: 100%;
+
+      b { color: #f33d6d; font-weight: inherit }
+    }
   }
 }
 
