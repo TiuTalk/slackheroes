@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 ruby '2.3.1'
 
-gem 'rails',                  '5.0.0'
+gem 'rails',                  '5.0.0.1'
 gem 'puma',                   '2.15.3'
 gem 'secure_headers',         '3.5.0'
 gem 'jquery-rails',           '4.1.1'
