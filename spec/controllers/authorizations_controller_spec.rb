@@ -24,16 +24,21 @@ RSpec.describe AuthorizationsController, type: :controller do
     end
 
     context 'with successful authorization' do
-      it 'redirects to root' do
-        get :authorize
-        expect(response).to redirect_to(root_path)
-      end
-
       before { controller.request.env['omniauth.auth'] = request }
 
       context 'with new team' do
         it 'create a new team' do
           expect{ get :authorize }.to change(Team, :count).by(1)
+        end
+
+        it 'redirects to the new team page' do
+          get :authorize
+          expect(response).to redirect_to(team_path(Team.last))
+        end
+
+        it 'returns flash message' do
+          get :authrorize
+          expect(flash[:message]).to eq 'Your team is authorized successfully. We are importing your team data. Check back this page in a few minutes.'
         end
       end
 
@@ -42,6 +47,16 @@ RSpec.describe AuthorizationsController, type: :controller do
 
         it 'updates team' do
           expect{ get :authorize }.to change{ team.reload.domain }.from('foobar').to('helabs')
+        end
+
+        it 'redirects to team page' do
+          get :authorize
+          expect(response).to redirect_to(team_path(team.reload))
+        end
+
+        it 'returns flash message' do
+          get :authrorize
+          expect(flash[:message]).to eq 'Your team was already authorized.'
         end
       end
     end
