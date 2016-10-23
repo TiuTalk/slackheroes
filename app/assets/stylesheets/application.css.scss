@@ -170,6 +170,7 @@
       color: #f2ebeb;
       font-weight: bold;
       margin: 0 .5em;
+      text-shadow: 1px 1px 0 rgba(0, 0, 0, .2);
     }
   }
 
@@ -237,6 +238,7 @@
         position: absolute;
         font-weight: bold;
         color: #fff;
+        text-shadow: 1px 1px 0 rgba(0, 0, 0, .2);
       }
       .title, .company { display: none }
 
