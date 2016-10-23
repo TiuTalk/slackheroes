@@ -2,20 +2,8 @@
   <%= render 'deck', deck: ChampionsDeck.new(team: @team) %>
 <% end %>
 
-<%= render 'deck', deck: RankingDeck.new(:love, team: @team) %>
-
-<%= render 'deck', deck: RankingDeck.new(:kisser, team: @team) %>
-
-<%= render 'deck', deck: RankingDeck.new(:religious, team: @team) %>
-
-<%= render 'deck', deck: RankingDeck.new(:smile, team: @team) %>
-
-<%= render 'deck', deck: RankingDeck.new(:money, team: @team) %>
-
-<%= render 'deck', deck: RankingDeck.new(:cry, team: @team) %>
-
-<%= render 'deck', deck: RankingDeck.new(:erotic, team: @team) %>
-
-<%= render 'deck', deck: RankingDeck.new(:parrot, team: @team) %>
+<% @decks.first(5).each do |deck| %>
+  <%= render 'deck', deck: deck %>
+<% end %>
 
 <%= render 'deck', deck: TeamDeck.new(team: @team) %>
